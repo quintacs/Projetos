@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<!--link href="css/index.css" rel="stylesheet"-->
+	<link href="css/form.css" rel="stylesheet">
+	<script type="text/javascript" src="js/java-script.js"></script>
+</head>
+<body onload="javascript:loadNodes('lista'); showDivs(1);" >
+
+ <form id="form"> 
+      <input type='hidden' name='acao' id='acao' />
+      <input type='hidden' name='metodo' id='metodo' />
+		
+ 	 <div class="header" >
+		 <h1>Qi Auto Peças - Peça </h1>  		
+	 	<p> Sua melhor opção em peças automotivas </p>
+  	</div>
+  	<div class="conteudo">
+		<div class="col-3 col-s-3 menu">
+			<ul>
+				<li id="voltar" onClick="javascript:load('form','Peca','index');"  >
+					Voltar
+				</li>				
+			</ul>		
+		</div>								
+		 <div class="col-6 col-s-9">
+			<div class="w3-content w3-display-container">					
+								
+			  <div> 	
+									<span class="coluna-25" >Nome*</span>
+									<input type="text" name="nome" id="nome" class="coluna-75" >  
+								</div>				
+								<div> 	
+									<span class="coluna-25" >Modelo</span>
+									<input type="text" name="modelo" id="modelo" class="coluna-75" >  
+								</div>
+								
+								<div> 	
+									<span class="coluna-25" >Ano</span>
+									<input type="text" name="ano" id="ano" class="coluna-75" >  
+								</div>								
+
+								<div> 	
+									<span class="coluna-25" >Cor</span>
+									<input type="text" name="cor" id="cor" class="coluna-75" >  
+								</div>								
+																
+								<div> 	
+									<span class="coluna-25" >Marca</span>
+									<input type="text" name="marca" id="marca" class="coluna-75" >  
+								</div>
+								
+								<div> 	
+									<span class="coluna-25" >Imagem</span>
+									<!-- <input type="text" name="imagem" id="imagem" > --> 
+									 <input type="image" name="imagem" id="imagem" class="coluna-75" >
+								</div>
+									<input type="submit" value="Enviar" class="box">
+				</div>						
+			</div>
+		    <div class="col-3 col-s-12">
+			    <!--espaco para anuncio -->
+			    <div class="aside">
+			    	Direita
+		    	</div>				
+	    	</div>
+	    </div>	
+		<div class="footer">
+			<p>Resize the browser window to see how the content respond to the resizing.</p>
+		</div>		
+	</form>
+</body>
+</html>

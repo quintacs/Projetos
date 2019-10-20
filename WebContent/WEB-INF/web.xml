@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>QIAutoPecas</display-name>
+
+<welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+    <!--welcome-file>index_old.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>principal_old1.jsp</welcome-file>
+    <welcome-file>carrega.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file -->
+  </welcome-file-list>
+ 
+ <!-- *************** MAPEIA A CLASSE SERVLET *************** --> 
+  <servlet>
+         <servlet-name>Controller</servlet-name>
+        <servlet-class>br.com.qi.servlet.controller.ServletController</servlet-class>               
+  </servlet>
+        
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controler</url-pattern>
+    </servlet-mapping>
+ 
+
+  <servlet>
+         <servlet-name>UsuarioController</servlet-name>
+        <servlet-class>br.com.qi.servlet.controller.ServletUsuarioController</servlet-class>               
+  </servlet>
+        
+    <servlet-mapping>
+        <servlet-name>UsuarioController</servlet-name>
+        <url-pattern>/usuario</url-pattern>
+    </servlet-mapping>
+    
+ <!-- *************** FILTRA A REQUSI��O *************** -->     
+     <filter>
+    	<filter-name>filtro</filter-name>
+    	<filter-class>br.com.qi.filtro.FiltraRequisicao</filter-class>
+    </filter>
+    
+  <filter-mapping>
+  	  <filter-name>filtro</filter-name>
+  	  <url-pattern>*</url-pattern>
+  </filter-mapping>
+
+ <!-- *************** FORMULARIOS *************** ->  
+  <context-param>
+  		<param-name>LojaForm</param-name>
+  		<param-value>br.com.qi.form.LojaForm</param-value>
+  </context-param>
+
+  <context-param>
+  		<param-name>OficinaForm</param-name>
+  		<param-value>br.com.qi.form.OficinaForm</param-value>
+  </context-param>
+  
+    <context-param>
+  		<param-name>PecaForm</param-name>
+  		<param-value>br.com.qi.form.PecaForm</param-value>
+  </context-param>  
+  -->
+  
+ <!-- *************** ACOES *************** -> 
+    <context-param>
+  		<param-name>LojaAction</param-name>
+  		<param-value>br.com.qi.action.LojaAction</param-value>
+  </context-param>
+
+  <context-param>
+  		<param-name>OficinaAction</param-name>
+  		<param-value>br.com.qi.action.OficinaAction</param-value>
+  </context-param>
+  
+    <context-param>
+  		<param-name>PecaAction</param-name>
+  		<param-value>br.com.qi.action.PecaAction</param-value>
+  </context-param>  
+  -->
+  
+</web-app>

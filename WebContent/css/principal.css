@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/*pirncipal*/
+.coluna > img:hover{
+	
+	box-shadow:10px 10px grey;
+}
+
+ .coluna > img{
+		margin:20px;
+		width:150px;
+		height:110px;
+	}
+
+.jumbotron{
+	margin:0px;
+}	
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  /*margin top bottom right left */
+  margin-bottom: 0px 0px 0px 0px;
+  border-radius: 10px;
+}
+
+.banner{
+	/*margin top bottom right left */
+	margin: 0px  0px 0px 0px; 
+	margin:0px;
+	background-color: #cccccc;
+	
+}
+
+.banner > img{
+	
+	/*background-image:url("/images/banner/banner2.jpg");*/
+	/*margin top left bottom right */
+	
+	height:300px;
+	width:700px;
+	background-position:center;
+	background-repeat:no-repeat;
+	position:relative;
+	/*margin:10px 450px 10px 550px;*/
+	margin:auto;
+	background-size:cover;
+}
+    /* Add a gray background color and some padding to the footer */
+footer {
+  background-color:#cccccc;
+  padding: 25px;
+  text-align: center;
+  
+}
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  
+  /* login */
+
+.conteudo-login {
+	
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  
+}
+
+.label-login{
+	
+  padding: 12px 12px 12px 200px;
+  display: inline-block;
+}
+
+@media (max-width:800px){
+	.label-login{
+		padding: 12px 12px 12px 20px;
+	}
+}
+/* Style inputs, select elements and textareas *
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}*/
+.input{
+	width:50%;
+	height:5%;
+	padding:12px;
+	border:2px solid #ccc;
+	border-radius:5px;
+	box-sizing:border-box;
+	resize:vertical;
+}
+.submit:hover{
+	background-color:#45a049
+}
+/* Style the submit button *
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}*/
+
+.submit{
+   background-color: #4CAF50;
+   color: white;
+   padding: 12px 70px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   /*margin:10px 10px 10px 420px;*/
+   
+}
+
+/* For mobile phones: */
+[class*="col-"]{
+	width:100%;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link href="css/index.css" rel="stylesheet">
+	<script type="text/javascript" src="js/java-script.js"></script>
+</head>
+<body onload="javascript:loadNodes('lista'); showDivs(1);" >
+<form id="form"> 
+		<input type='hidden' name='acao' id='acao' />
+		
+<div class="header">
+  <h1>Qi Auto PeÃ§as</h1>
+  <p> Sua melhor opção em peças automotivas </p>
+  
+</div>
+
+<div class="conteudo">
+	<!-- esquerda -->
+	<div class="col-3 col-s-3 menu">
+			<ul>
+				<li id="Lojas" onclick="javascript:load('form','loja')" > <!--onclick="javascript:load('lojas')"-->
+					Lojas								
+					<!--<div id="lista_1" " >				  
+					  <ul>
+						  <li>Centro </li>
+						  <li>Zona Sul </li>
+						  <li>Zona Norte </li>
+						<li>Zona Oeste </li>
+					  </ul>
+					</div>-->							
+				</li>
+				<li id="Oficinas"  onclick="javascript:load('form','oficina')" > <!--onclick="javascript:showHideNodes('lista_2')" -->
+					Oficinas				
+					<!--<div id="lista_2"   >
+						<ul>
+							<li>Centro </li>
+							<li>Zona Sul </li>
+							<li>Zona Norte </li>
+							<li>Zona Oeste </li>
+						</ul>
+					</div>-->
+				</li>			
+				<li id="Pecas" onclick="javascript:load('form','peca')">
+					Peças
+				</li>
+			</ul>	
+	</div>
+
+	<div class="col-6 col-s-9">
+		<!-- centro 
+		<h1>centro</h1>-->
+		<div class="w3-content w3-display-container">
+			<img class="mySlides" src="images/banner/banner1.jpg" style="width:100%">
+			<img class="mySlides" src="images/banner/banner2.jpg" style="width:100%">
+			<img class="mySlides" src="images/banner/banner3.jpg" style="width:100%">
+			<img class="mySlides" src="images/banner/banner3.jpg" style="width:100%">
+			
+			<!--<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)"  >&#10094;</button>
+			<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)"  >&#10095;</button>	-->		
+		</div>						
+	</div>
+
+	<div class="col-3 col-s-12">
+		<!-- direita -->
+		<div class="aside">
+			<h2>What?</h2>
+			<p>Chania is a city on the island of Crete.</p>
+			<h2>Where?</h2>
+			<p>Crete is a Greek island in the Mediterranean Sea.</p>
+			<h2>How?</h2>
+			<p>You can reach Chania airport from all over Europe.</p>
+		</div>
+	</div>
+
+</div>
+
+<div class="footer">
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+</form>
+</body>
+</html>
