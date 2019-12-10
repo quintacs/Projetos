@@ -35,7 +35,7 @@
 			request.getSession().setAttribute("form", loginForm);
 %>
 </head>
-<body onload="setTimeout(ocultaResposta, 3000)">
+<body onload="setTimeout(ocultaResposta, 9000)">
   <form id="form">
 	  	<input type='hidden' name='acao' id='acao' />
   		<input type='hidden' name='metodo' id='metodo' />

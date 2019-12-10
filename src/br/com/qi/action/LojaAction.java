@@ -35,25 +35,31 @@ public class LojaAction extends Action	{
 	     if(tipo == null ) 
 			   tipo = request.getParameter("tipoLista");
 		 
-	     if(loginForm != null )
-	    	 request.getSession().setAttribute("form", loginForm);
-	    	 
-		   if("lista1".equalsIgnoreCase(tipo) ) {			   
-			   
-				dao = (LojaDao) ActionDao.loadClasse("LojaDao");
-				request.setAttribute("lista", dao.lista());
-				request.setAttribute("acao", acao);
-				
-			   retorno = "lista/lista1.jsp";
-		   }else {
-			   
-				dao = (LojaDao) ActionDao.loadClasse("LojaDao");
-				request.setAttribute("lista", dao.lista());			   
-				request.setAttribute("acao", acao);
-				
-				retorno = "lista/lista2.jsp";
-		   }
-		   		
+		  if(loginForm != null ) 
+		    	 request.getSession().setAttribute("form", loginForm);
+		    
+		   if(loginForm == null) { 
+			   	request.setAttribute("mensagem", "É necessário um usuário logado para listar as lojas.");			   	
+				request.setAttribute("acao", "Loja");
+				request.setAttribute("metodo", "index");
+				retorno = "/controler";			   
+			}else {
+				   if("lista1".equalsIgnoreCase(tipo) ) {			   
+					   
+						dao = (LojaDao) ActionDao.loadClasse("LojaDao");
+						request.setAttribute("lista", dao.lista());
+						request.setAttribute("acao", acao);
+						
+					   retorno = "lista/lista1.jsp";
+				   }else {
+					   
+						dao = (LojaDao) ActionDao.loadClasse("LojaDao");
+						request.setAttribute("lista", dao.lista());			   
+						request.setAttribute("acao", acao);
+						
+						retorno = "lista/lista2.jsp";
+				   }
+		     }
 		return retorno;
 	}
 

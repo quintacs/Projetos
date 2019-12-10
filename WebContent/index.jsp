@@ -1,11 +1,26 @@
+<%@page import="br.com.qi.form.*"%>
 <jsp:include page="cabecalho.jsp" />
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" ></meta>	
 	<link href="css/index.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/java-script.js"></script>
 	<script type="text/javascript" src="js/fontes-jquery.js"></script>	
+<script type="text/javascript">
+		
+			function ocultaResposta() {
+        		document.getElementById('resposta').style.display = 'none';
+    		}            
+</script>	
+<%  	LoginForm loginForm = (LoginForm) request.getSession().getAttribute("form");
+		String mensagem = (String)request.getAttribute("mensagem");
+		
+		if(loginForm == null )
+			request.getSession().setAttribute("form", null);
+		else
+			request.getSession().setAttribute("form", loginForm);
+%>	
 </head>
-<body onload="javascript:loadNodes('lista'); showDivs(1);" >
+<body onload="javascript:loadNodes('lista'); showDivs(1); setTimeout(ocultaResposta, 9000);" >
 <form id="form"> 
 		<input type='hidden' name='acao'   id='acao' />
 		<input type='hidden' name='metodo' id='metodo' />
@@ -49,7 +64,11 @@
 				
 				<!--<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)"  >&#10094;</button>
 				<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)"  >&#10095;</button>	-->		
-			</div>		
+			</div>	
+			
+		   <div id="resposta"  >${mensagem}</div> 		
+			<div id="msg"></div>						
+				
 		</div>
 	
 		<div class="col-3 col-s-12">

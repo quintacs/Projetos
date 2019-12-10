@@ -26,8 +26,10 @@ public class PecaAction extends Action {
 		request.setAttribute("lista", dao.lista());		
 		return "lista/pecas.jsp";*/
 		
+		String retorno = "";
 		String acao = (String) request.getAttribute("acao"); 
 		String tipo = (String) request.getAttribute("tipoLista");
+		LoginForm loginForm = (LoginForm) request.getSession().getAttribute("form");	
 		
 		   if(acao == null ) 
 			   acao = request.getParameter("acao");
@@ -35,22 +37,31 @@ public class PecaAction extends Action {
 		   if(tipo == null ) 
 			   tipo = request.getParameter("tipoLista");
 		   
-		   if("lista1".equalsIgnoreCase(tipo) ) {
-			   
-			   
-				LojaDao dao = (LojaDao) ActionDao.loadClasse("LojaDao");
-				request.setAttribute("lista", dao.lista());
-				request.setAttribute("acao", acao);
+		   if(loginForm == null) { 
+			   	request.setAttribute("mensagem", "É necessário um usuário logado para listar as peças.");			   	
+				request.setAttribute("acao", "Peca");
+				request.setAttribute("metodo", "index");
+				retorno = "/controler";			   
+			}else {
 				
-			   return "lista/lista1.jsp";
-		   }else {
-			   
-				LojaDao dao = (LojaDao) ActionDao.loadClasse("LojaDao");
-				request.setAttribute("lista", dao.lista());			   
-				request.setAttribute("acao", acao);
-				
-			   return "lista/lista2.jsp";
-		   }
+			   if("lista1".equalsIgnoreCase(tipo) ) {
+				   
+				   
+					LojaDao dao = (LojaDao) ActionDao.loadClasse("LojaDao");
+					request.setAttribute("lista", dao.lista());
+					request.setAttribute("acao", acao);
+					
+					retorno =  "lista/lista1.jsp";
+			   }else {
+				   
+					LojaDao dao = (LojaDao) ActionDao.loadClasse("LojaDao");
+					request.setAttribute("lista", dao.lista());			   
+					request.setAttribute("acao", acao);
+					
+					retorno =  "lista/lista2.jsp";
+			   }
+		}
+		   return retorno;
 	}
 
 	@Override
